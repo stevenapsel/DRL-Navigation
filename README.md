@@ -29,3 +29,6 @@ This project was completed using the workspace provided by Udacity.
 There is also an option to install/configure this environment locally: https://github.com/udacity/deep-reinforcement-learning#dependencies
 
 This will also require downloading the Unity environment from Udacity.
+
+### Instructions
+Running the Navigation.ipynb notebook will train the agent.  The training will stop early when an average score of 13 (over a sliding window of 100 episodes) is achieved, and the model weights for the Deep Q Network (trained policy used to predict actions based on input state) will be saved in checkpoint.pth.
