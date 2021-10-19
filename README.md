@@ -21,3 +21,11 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`3`** - turn right.
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
+
+### Getting Started
+
+This project was completed using the workspace provided by Udacity.  
+
+There is also an option to install/configure this environment locally: https://github.com/udacity/deep-reinforcement-learning#dependencies
+
+This will also require downloading the Unity environment from Udacity.
