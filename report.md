@@ -25,3 +25,7 @@ Both of these improvements help to address instabilities associated with Q-Learn
 > an iterative update that adjusts the action-values (Q) towards target
 > values that are only periodically updated, thereby reducing correlations
 > with the target.
+
+The pseudo-code from the paper is as follows:
+
+![alg](screencapture.png)
