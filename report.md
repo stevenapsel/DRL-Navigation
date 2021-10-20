@@ -29,3 +29,13 @@ Both of these improvements help to address instabilities associated with Q-Learn
 The pseudo-code from the paper is as follows:
 
 ![alg](screencapture.png)
+
+### Implementation
+
+The code used for this project is heavily based on the solution in the Deep Q-Learning Lunar Lander project.
+
+The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
+
+Plot of Rewards
+
+Ideas for Future Work
