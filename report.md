@@ -8,4 +8,6 @@
 
 ### Algorithm
 
-this is the algorithm
+For this project I implemented the Deep Q-Network as described in the paper: [Human-level control through deep reinforcement
+learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+
