@@ -35,7 +35,7 @@ The pseudo-code from the paper is as follows:
 The code used for this project is heavily based on the solution in the Deep Q-Learning Lunar Lander project.  The key components are as follows:
 
 #### model.py:  
-This file contains the QNetwork class, which implements a pytorch deep neural network that takes input the size of the state space, produces output the size of the action space, and has two hidden layers of configurable size.  For this project, both layers were set to 512 nodes.  As described in the algorithm section, the QNetwork(s) were used for both training and inference at various points.
+This file contains the QNetwork class, which implements a pytorch deep neural network that takes input the size of the state space, produces output the size of the action space, and has two hidden layers (with ReLU activation) of configurable size.  For this project, both layers were set to 512 nodes.  As described in the algorithm section, the QNetwork(s) were used for both training and inference at various points.
 
 #### dqn_agent.py:
 This file contains two classes.  The Agent class is the main interface for interacting with and learning from the enviroment.  The Agent delegates to the ReplayBuffer class to store the experience tuples needed for experience replay.  The key methods are described below.
@@ -48,13 +48,20 @@ The training loop will choose an action and provide it to the enviroment.  With 
 ##### Agent.learn
 This method implements the target computation and gradient descent step from the algorithm pseudo-code, with the modification of using an Adam optimizer.  The updated qnetwork_local is then used to gradually update (based on interpolation parameter TAU) the qnetwork_target.
 #### Network.ipynb
-blah
+The dqn() method in the notebook is the main training loop.  It uses Agent.act to choose actions, uses the actions to generate experiences from the enviroment, and feeds the experiences to Agent.step, where the learning is triggered after UPDATE_EVERY steps.
+### Hyperparameters
+The following hyperparameter settings were used:
+```
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 64         # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR = 5e-4               # learning rate 
+UPDATE_EVERY = 4        # how often to update the network
+```
+The model architecture for the neural network is described above in the model.py section.
+
+### Plot of Rewards
 
 
-
-
-The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
-
-Plot of Rewards
-
-Ideas for Future Work
+### Ideas for Future Work
