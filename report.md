@@ -32,7 +32,22 @@ The pseudo-code from the paper is as follows:
 
 ### Implementation
 
-The code used for this project is heavily based on the solution in the Deep Q-Learning Lunar Lander project.
+The code used for this project is heavily based on the solution in the Deep Q-Learning Lunar Lander project.  The key components are as follows:
+
+#### model.py:  
+This file contains the QNetwork class, which implements a pytorch deep neural network that takes input the size of the state space, produces output the size of the action space, and has two hidden layers of configurable size.  For this project, both layers were set to 512 nodes.  As described in the algorithm section, the QNetwork(s) were used for both training and inference at various points.
+
+#### dqn_agent.py:
+This file contains two classes.  The Agent class is the main interface for interacting with and learning from the enviroment.  The Agent delegates to the ReplayBuffer class to store the experience tuples needed for experience replay.  The key methods are described below.
+##### Agent.__init__
+A key feature of this constructor is that it instantiates two QNetworks, qnetwork_local and qnetwork_target.  While qnetwork_local is being trained, qnetwork_target is used to generate stable targets for computing the loss.
+##### Agent.act
+This method returns an action based on the input state.  It makes an epsilon greedy selection based on the prediction from qnetwork_local.  Since epsilon is an input parameter, the training loop can gradually move from exploration to exploitation.
+##### Agent.step
+The training loop will choose an action and provide it to the enviroment.  With the environment's response, we have a full experience (state, action, reward, next_state, done) that can be stored in the ReplayBuffer.
+
+
+
 
 The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
 
