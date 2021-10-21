@@ -62,6 +62,18 @@ UPDATE_EVERY = 4        # how often to update the network
 The model architecture for the neural network is described above in the model.py section.
 
 ### Plot of Rewards
-
+Network.ipynb shows the plot of rewards and the number of episodes required.  As shown below, it took 707 episodes to achieve an average score of 13.
+```
+Episode 100	Average Score: 1.12
+Episode 200	Average Score: 4.19
+Episode 300	Average Score: 6.30
+Episode 400	Average Score: 8.56
+Episode 500	Average Score: 10.32
+Episode 600	Average Score: 11.99
+Episode 700	Average Score: 12.51
+Episode 800	Average Score: 12.63
+Episode 807	Average Score: 13.00
+Environment solved in 707 episodes!	Average Score: 13.00
+```
 
 ### Ideas for Future Work
