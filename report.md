@@ -77,3 +77,10 @@ Environment solved in 707 episodes!	Average Score: 13.00
 ```
 
 ### Ideas for Future Work
+Here are a few ideas that could improve the training speed and/or performance of the agent.
+#### Hyperparameter Tuning
+The hyperparameters we've used here were fine for completing the project.  Are they optimal?  Probably not.  Some additional exploration could yield better results.
+#### Network Architecture
+We used a fairly simple network in QNetwork.  Further exploration could look at varying the size (or number) of the hidden layers.
+#### Prioritized Experience Replay
+For this project, our replays were uniformly sampled.  What if we could choose sampled from a weighted distribution that gave preference to experiences that are more likely to have an larger impact on learning?  That is the idea behind [prioritized experience replay](https://arxiv.org/abs/1511.05952).
