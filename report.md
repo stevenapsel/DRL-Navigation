@@ -46,6 +46,9 @@ This method returns an action based on the input state.  It makes an epsilon gre
 ##### Agent.step
 The training loop will choose an action and provide it to the enviroment.  With the environment's response, we have a full experience (state, action, reward, next_state, done) that can be stored in the ReplayBuffer.  For every UPDATE_EVERY calls to Agent.step, the method will sample BATCH_SIZE samples from the ReplayBuffer and update both QNetworks by calling Agent.learn
 ##### Agent.learn
+This method implements the target computation and gradient descent step from the algorithm pseudo-code, with the modification of using an Adam optimizer.  The updated qnetwork_local is then used to gradually update (based on interpolation parameter TAU) the qnetwork_target.
+#### Network.ipynb
+blah
 
 
 
